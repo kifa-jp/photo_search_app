@@ -8,7 +8,9 @@ function App() {
 
   useEffect(() => {
     console.log('useEffectが走りました');
-    fetch(`https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.REACT_APP_CLIENT_ID}`)
+    fetch(
+      `https://api.unsplash.com/search/photos?query=${query}&per_page=12&client_id=${process.env.REACT_APP_CLIENT_ID}`
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
